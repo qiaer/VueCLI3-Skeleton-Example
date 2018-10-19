@@ -10,6 +10,9 @@ npm install
 
 npm run serve
 
+## gif
+![image](https://github.com/qiaer/VueCLI3-Skeleton-Example/blob/master/sketelon.gif)
+
 ## Thanks
 
 Vue脚手架[VueCli3](https://cli.vuejs.org/zh/).
