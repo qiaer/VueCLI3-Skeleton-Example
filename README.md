@@ -4,6 +4,8 @@
 
 ## Example
 
+skeleton 框架图可使用svg自定义（更接近实际DOM结构），由UI生成图，通过photoshop转成svg即可
+
 npm install
 
 npm run serve
