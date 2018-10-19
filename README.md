@@ -1,6 +1,6 @@
 
 # VueCLI3-Skeleton-Example 
-基于VueCLI3 骨架屏注入模板（依赖于Mint-ui,二次封装axios）
+基于VueCLI3 骨架屏注入模板（二次封装axios,依赖于Mint-ui-inditor）
 
 ## Example
 
