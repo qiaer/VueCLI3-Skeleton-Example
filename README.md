@@ -10,4 +10,5 @@ npm run serve
 ## Thanks
 
 Vue脚手架[VueCli3](https://cli.vuejs.org/zh/).
+
 骨架屏[vue-skeleton-webpack-plugin](https://github.com/lavas-project/vue-skeleton-webpack-plugin).
