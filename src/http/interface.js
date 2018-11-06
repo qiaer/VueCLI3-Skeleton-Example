@@ -7,22 +7,17 @@ import axios from './api'
 // 单独导出
 export const init = params => {
     return axios({
-        url: '/init',
+        url: window._uri_params.init.uri || '/apidata/init',
         method: 'post',
+        waitload: false,
         params
     })
 }
-export const mock = params => {
+export const get = params => {
     return axios({
-        url: '/mock',
-        method: 'get',
-        params
-    })
-}
-export const upload = params => {
-    return axios({
-        url: '/upload',
+        url: window._uri_params.get.uri || '/apidata/get',
         method: 'post',
+        waitload: true,
         params
     })
 }
@@ -30,6 +25,6 @@ export const upload = params => {
 // 默认全部导出 根据需要
 // export default {
 //     init,
-//     mock,
+//     get,
 //     upload,
 // }

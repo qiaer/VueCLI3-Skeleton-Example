@@ -1,7 +1,14 @@
 const path = require('path');
 const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin');
+const env = require('./config/env');
 
 module.exports = {
+  baseUrl: process.env.NODE_ENV === 'production' ? 'http://cdn.xxx.com/'+env.serverPath : '/',
+  // baseUrl: './',
+  outputDir: 'dist',
+  lintOnSave: true,
+  productionSourceMap: false,
+  
   configureWebpack: {
     plugins: [
       new SkeletonWebpackPlugin({
@@ -16,13 +23,17 @@ module.exports = {
           mode: 'history',
           routes: [
               {
-                  path: '/page1',
-                  skeletonId: 'skeleton1'
+                  path: '/',
+                  skeletonId: 'skeleton'
               },
-              {
-                  path: '/page2',
-                  skeletonId: 'skeleton2'
-              }
+              // {
+              //     path: '/index',
+              //     skeletonId: 'skeleton'
+              // },
+              // {
+              //     path: '/page2',
+              //     skeletonId: 'skeleton2'
+              // }
           ]
         }
       }),
@@ -35,7 +46,7 @@ module.exports = {
   },
 
   devServer: {
-    host: 'localhost',
+    host: '192.168.2.124',
     port: 8080,
     open: true,
   },
@@ -44,7 +55,7 @@ module.exports = {
     'style-resources-loader': {
       preProcessor: 'less',
       patterns: [
-        '/Users/huangyouqiang/Desktop/skeleton-vuecli3/src/common/style/common.less'
+        './src/common/style/common.less'
       ]
     }
   }

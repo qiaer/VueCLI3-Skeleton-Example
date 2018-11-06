@@ -6,9 +6,10 @@ import { Indicator, Toast } from 'mint-ui'
 export default async function $axios (options) {
     return new Promise((resolve, reject) => {
         const instance = axios.create({
-            baseURL: config.baseURL,
+            baseURL: process.env.NODE_ENV === 'production' ? './' : config.baseURL,
+            // baseURL: config.baseURL,
             headers: {},
-            transformResponse: [function (data) {}]
+            transformResponse: [function (data) {console.log(data)}]
         }
     )
 
@@ -17,9 +18,8 @@ export default async function $axios (options) {
         config => {
             // todo 1
             // 请求开始的时候可以结合 vuex 开启全屏的 loading 动画
-            Indicator.open({
-                spinnerType: 'fading-circle'
-            })
+            if (options.waitload) Indicator.open({spinnerType: 'fading-circle'})
+            
 
             // todo 2 
             // 带上 token , 可以结合 vuex 或者重 localStorage
@@ -56,9 +56,10 @@ export default async function $axios (options) {
             if (errorInfo) {
                 // error =errorInfo.data//页面那边catch的时候就能拿到详细的错误信息,看最下边的Promise.reject
                 const errorStatus = errorInfo.status; // 404 403 500 ... 等
-                router.push({
-                    path: `/error/${errorStatus}`
-                })
+                console.error(errorStatus)
+                // router.push({
+                //     path: `/error/${errorStatus}`
+                // })
             }
             return Promise.reject(error) // 在调用的那边可以拿到(catch)你想返回的错误信息
         }
@@ -155,7 +156,7 @@ export default async function $axios (options) {
         })
         .catch((error) => {
             Indicator.close()
-            Toast({message: res.message})
+            Toast({message: error.message})
             reject(error)
         })
     })

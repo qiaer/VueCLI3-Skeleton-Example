@@ -1,6 +1,6 @@
 
 # VueCLI3-Skeleton-Example 
-基于VueCLI3 骨架屏注入模板（二次封装axios,依赖于Mint-ui-inditor）
+基于VueCLI3 骨架屏注入模板（二次封装axios,依赖于Mint-ui-inditor,集成ftp上传插件）
 
 ## Example
 
@@ -10,7 +10,15 @@ npm install
 
 npm run serve
 
-## gif
+打包
+
+npm run build
+
+上传CDN服务器
+
+npm run deploy
+
+## GIF
 ![image](https://github.com/qiaer/VueCLI3-Skeleton-Example/blob/master/sketelon.gif)
 
 ## Thanks

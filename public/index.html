@@ -12,13 +12,24 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
-    <title>skeleton-vuecli3</title>
+    <title>每日任务</title>
   </head>
-  <body>
-    <!-- <noscript>
-      <strong>We're sorry but skeleton-vuecli3 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript> -->
+  <body style="margin: 0 !important;">
     <div id="app"></div>
-    <!-- built files will be auto injected -->
+    <script>
+      var _data = {
+        sessionid: '1111'
+      }
+      var _uri_params = {
+        init: {
+          action: 'init',
+          uri: 'apidata/init'
+        },
+        get: {
+          action: 'get',
+          uri: 'apidata/get'
+        },
+      }
+    </script>
   </body>
 </html>
