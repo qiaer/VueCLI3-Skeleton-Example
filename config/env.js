@@ -1,7 +1,5 @@
-const serverPath = 'reader/2018/mrrw-1019' //ftpserver path
-// const _serverPath = 'mrrw-1024'
+const serverPath = 'xxx/xx/xxx' //ftpserver path
 
 module.exports = {
     serverPath,
-    // _serverPath,
 }
